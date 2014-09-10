@@ -1,99 +1,25 @@
 <div class="wrap snow-storm">
-	<h2><?php _e('Snow Storm', "snow-storm"); ?></h2>
-	
-	<h3><?php _e('Useful Links', "snow-storm"); ?></h3>
-	<ul>
-		<li><a href="http://docs.tribulant.com/wordpress-snow-storm-plugin/7799" target="_blank">Online Documentation</a></li>
-		<li><a href="http://plugin.snow-storm.wpplugins.biz" target="_blank">Live Demonstration of Falling Snow Flakes</a></li>
-		<li><a href="http://tribulant.com/support/" target="_blank">Get Support for Snow Storm plugin</a></li>
-		<li><a href="http://wordpress.org/plugins/snow-storm/" target="_blank">Rate on WordPress.org, please!</a></li>
-		<li><a href="http://tribulant.com" target="_blank">Other Amazing Plugins at Tribulant Software</a></li>
-	</ul>
-	
-	<h3><?php _e('Configure Snow Storm', "snow-storm"); ?></h3>
-	<form action="?page=snow-storm" method="post">	
-		<table class="form-table">
-			<tbody>
-				<tr>
-					<th><label for="snowColor"><?php _e('Snow Color', "snow-storm"); ?></label></th>
-					<td>
-						<input type="text" onfocus="jQuery('#farbtastic').show();" onblur="jQuery('#farbtastic').hide();" name="snowColor" value="<?php echo esc_attr(stripslashes(get_option('snowstorm_snowColor'))); ?>" id="snowColor" class="widefat" style="width:65px;" />
-						<div id="farbtastic" style="display:none;"></div>
-						<span class="howto"><?php _e('Color of the snow flakes.', "snow-storm"); ?></span>
-						
-						<script type="text/javascript">
-						jQuery(document).ready(function() {
-							jQuery('#farbtastic').farbtastic('#snowColor');
-						});
-						</script>
-					</td>
-				</tr>
-				<tr>
-					<th><label for="flakesMax"><?php _e('Total Amount of Snow', "snow-storm"); ?></label></th>
-					<td>
-						<input class="widefat" style="width:65px;" type="text" name="flakesMax" value="<?php echo esc_attr(stripslashes(get_option('snowstorm_flakesMax'))); ?>" id="flakesMax" />
-						<span class="howto"><?php _e('Limit the total amount of snow made (falling + sticking). Default value is 128.', "snow-storm"); ?></span>
-					</td>
-				</tr>
-				<tr>
-					<th><label for="flakesMaxActive"><?php _e('Falling Amount of Snow', "snow-storm"); ?></label></th>
-					<td>
-						<input type="text" name="flakesMaxActive" value="<?php echo esc_attr(stripslashes(get_option('snowstorm_flakesMaxActive'))); ?>" id="flakesMaxActive" class="widefat" style="width:65px;" />
-						<span class="howto"><?php _e('Limit the amount of snow falling at once. Default value is 64.', "snow-storm"); ?></span>
-					</td>
-				</tr>
-				<tr>
-					<th><label for="animationInterval"><?php _e('Animation Interval', "snow-storm"); ?></label></th>
-					<td>
-						<input type="text" name="animationInterval" value="<?php echo esc_attr(stripslashes(get_option('snowstorm_animationInterval'))); ?>" id="animationInterval" class="widefat" style="width:65px;" />
-						<span class="howto"><?php _e('Speed of the animation. 25 is fast and smooth with high CPU usage, while 50 is conservative and slower.', "snow-storm"); ?></span>
-					</td>
-				</tr>
-				<tr>
-					<th><label for="excludeMobile_Y"><?php _e('Mobile Support', "snow-storm"); ?></label></th>
-					<td>
-						<label><input <?php echo (get_option('snowstorm_excludeMobile') == "N") ? 'checked="checked"' : ''; ?> type="radio" name="excludeMobile" value="N" id="excludeMobile_N" /> <?php _e('On', "snow-storm"); ?></label>
-						<label><input <?php echo (get_option('snowstorm_excludeMobile') == "Y") ? 'checked="checked"' : ''; ?> type="radio" name="excludeMobile" value="Y" id="excludeMobile_Y" /> <?php _e('Off', "snow-storm"); ?></label>
-						<span class="howto"><?php _e('Animated snow is not recommended for mobiles due to CPU and batteries.', "snow-storm"); ?></span>
-					</td>
-				</tr>
-				<tr>
-					<th><label for="followMouse_N"><?php _e('Follow Mouse Cursor', "snow-storm"); ?></label></th>
-					<td>
-						<label><input <?php echo (get_option('snowstorm_followMouse') == "Y") ? 'checked="checked"' : ''; ?> type="radio" name="followMouse" value="Y" id="followMouse_Y" /> <?php _e('Yes', "snow-storm"); ?></label>
-						<label><input <?php echo (get_option('snowstorm_followMouse') == "N") ? 'checked="checked"' : ''; ?> type="radio" name="followMouse" value="N" id="followMouse_N" /> <?php _e('No', "snow-storm"); ?></label>
-						<span class="howto"><?php _e('Should the snow movement respond to the users mouse cursor?', "snow-storm"); ?></span>
-					</td>
-				</tr>
-				<tr>
-					<th><label for="snowStick_Y"><?php _e('Snow Stick', "snow-storm"); ?></label></th>
-					<td>
-						<label><input <?php echo (get_option('snowstorm_snowStick') == "Y") ? 'checked="checked"' : ''; ?> type="radio" name="snowStick" value="Y" id="snowStick_Y" /> <?php _e('On', "snow-storm"); ?></label>
-						<label><input <?php echo (get_option('snowstorm_snowStick') == "N") ? 'checked="checked"' : ''; ?> type="radio" name="snowStick" value="N" id="snowStick_N" /> <?php _e('Off', "snow-storm"); ?></label>
-						<span class="howto"><?php _e('Whether or not the snow should "stick" at the bottom of the screen.', "snow-storm"); ?></span>
-					</td>
-				</tr>
-				<tr>
-					<th><label for="useMeltEffect_Y"><?php _e('Melt Effect', "snow-storm"); ?></label></th>
-					<td>
-						<label><input <?php echo (get_option('snowstorm_useMeltEffect') == "Y") ? 'checked="checked"' : ''; ?> type="radio" name="useMeltEffect" value="Y" id="useMeltEffect_Y" /> <?php _e('On', "snow-storm"); ?></label>
-						<label><input <?php echo (get_option('snowstorm_useMeltEffect') == "N") ? 'checked="checked"' : ''; ?> type="radio" name="useMeltEffect" value="N" id="useMeltEffect_N" /> <?php _e('Off', "snow-storm"); ?></label>
-						<span class="howto"><?php _e('When recycling falling snow, have it melt if the browser supports it.', "snow-storm"); ?></span>
-					</td>
-				</tr>
-				<tr>
-					<th><label for="useTwinkleEffect_N"><?php _e('Twinkle Effect', "snow-storm"); ?></label></th>
-					<td>
-						<label><input <?php echo (get_option('snowstorm_useTwinkleEffect') == "Y") ? 'checked="checked"' : ''; ?> type="radio" name="useTwinkleEffect" value="Y" id="useTwinkleEffect_Y" /> <?php _e('On', "snow-storm"); ?></label>
-						<label><input <?php echo (get_option('snowstorm_useTwinkleEffect') == "N") ? 'checked="checked"' : ''; ?> type="radio" name="useTwinkleEffect" value="N" id="useTwinkleEffect_N" /> <?php _e('Off', "snow-storm"); ?></label>
-						<span class="howto"><?php _e('Allow snow to "twinkle" in and out while falling.', "snow-storm"); ?></span>
-					</td>
-				</tr>
-			</tbody>
-		</table>
+	<h2><?php _e('Snow Storm', 'snow-storm'); ?></h2>
+	<form action="" method="post" id="snow-storm-form">	
+		<?php
+
+		wp_nonce_field('closedpostboxes', 'closedpostboxesnonce', false);
+		wp_nonce_field('meta-box-order', 'meta-box-order-nonce', false); 
 		
-		<p class="submit">
-			<input class="button button-primary" type="submit" name="save" value="<?php _e('Save Settings', "snow-storm"); ?>" />
-		</p>
+		?>
+	
+		<div id="poststuff">
+			<div id="post-body" class="metabox-holder columns-2">
+				<div id="postbox-container-1" class="postbox-container">
+					<?php do_action('submitpage_box'); ?>
+					<?php do_meta_boxes('settings_page_snow-storm', 'side', false); ?>
+				</div>
+				<div id="postbox-container-2" class="postbox-container">
+					<?php do_meta_boxes('settings_page_snow-storm', 'high', false); ?>
+					<?php do_meta_boxes('settings_page_snow-storm', 'normal', false); ?>
+                    <?php do_meta_boxes('settings_page_snow-storm', 'advanced', false); ?>
+				</div>
+			</div>
+		</div>
 	</form>
 </div>

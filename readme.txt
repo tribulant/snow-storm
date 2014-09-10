@@ -1,10 +1,10 @@
-=== Plugin Name ===
+=== Tribulant Snow Storm ===
 Contributors: contrid
 Donate link: http://tribulant.com
-Tags: Festive, Christmas, Snow Storm, Falling Snow, Snow Flakes
+Tags: Festive, Christmas, Snow Storm, Snow, Falling Snow, Snow Flakes
 Requires at least: 3.0
-Tested up to: 3.9
-Stable tag: 1.2.1
+Tested up to: 4.0
+Stable tag: 1.3
 
 Display falling snow flakes on the front of your WordPress website for a festive presentation.
 
@@ -15,8 +15,10 @@ Display falling snow flakes on the front of your WordPress website for a festive
 Useful Links:
 
 * <a href="http://docs.tribulant.com/wordpress-snow-storm-plugin/7799">Online Documentation</a>
-* <a href="http://plugin.snow-storm.wpplugins.biz">Live Demonstration of Falling Snow Flakes</a>
+* <a href="http://tribulant.net/snowstorm/">Live Demonstration of Snow Storm plugin</a>
 * <a href="http://tribulant.com">Get Support for Snow Storm plugin</a>
+
+The Snow Storm plugin was developed by <a href="http://tribulant.com">Tribulant Software</a> so that WordPress website owners can display falling snow during the festive season eg. Christmas to decorate their website.
 
 == Installation ==
 
@@ -51,6 +53,13 @@ Go to <strong>Settings > Snow Storm</strong> in your WordPress dashboard where y
 2. Change the configuration settings according to your needs.
 
 == Changelog ==
+
+= 1.3 =
+* ADD: WordPress 4.0 compatibility
+* ADD: Languages/translation support
+* IMPROVE: "Recommended Plugin" box under settings
+* IMPROVE: Updated, minified `snow-storm.js` script
+* IMPROVE: Better, metaboxes layout under **Settings > Snow Storm**
 
 = 1.2.1 =
 * ADD: WordPress 3.9 compatibility
