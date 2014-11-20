@@ -9,6 +9,7 @@ Author URI: http://tribulant.com
 Version: 1.3
 */
 
+
 if (!defined('DS')) { define('DS', DIRECTORY_SEPARATOR); }
 
 function snow_storm_activate() {
